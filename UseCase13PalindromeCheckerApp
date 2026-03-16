@@ -1,0 +1,139 @@
+import java.util.Scanner;
+
+public classimport java.util.Scanner;
+
+public class UseCase13PalindromeCheckerApp {
+
+    // Method 1: Reverse String Method
+    public static boolean checkPalindromeReverse(String str) {
+        String reversed = new StringBuilder(str).reverse().toString();
+        return str.equals(reversed);
+    }
+
+    // Method 2: Two Pointer Method
+    public static boolean checkPalindromeTwoPointer(String str) {
+        int left = 0;
+        int right = str.length() - 1;
+
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+    // Method 3: Using Recursion
+    public static boolean checkPalindromeRecursion(String str, int start, int end) {
+        if (start >= end)
+            return true;
+
+        if (str.charAt(start) != str.charAt(end))
+            return false;
+
+        return checkPalindromeRecursion(str, start + 1, end - 1);
+    }
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("=== Palindrome Checker Performance Comparison ===");
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+
+        // Algorithm 1
+        long start1 = System.nanoTime();
+        boolean result1 = checkPalindromeReverse(input);
+        long end1 = System.nanoTime();
+        long time1 = end1 - start1;
+
+        // Algorithm 2
+        long start2 = System.nanoTime();
+        boolean result2 = checkPalindromeTwoPointer(input);
+        long end2 = System.nanoTime();
+        long time2 = end2 - start2;
+
+        // Algorithm 3
+        long start3 = System.nanoTime();
+        boolean result3 = checkPalindromeRecursion(input, 0, input.length() - 1);
+        long end3 = System.nanoTime();
+        long time3 = end3 - start3;
+
+        System.out.println("\n=== Results ===");
+        System.out.println("Reverse Method: " + result1 + " | Time: " + time1 + " ns");
+        System.out.println("Two Pointer Method: " + result2 + " | Time: " + time2 + " ns");
+        System.out.println("Recursion Method: " + result3 + " | Time: " + time3 + " ns");
+
+        scanner.close();
+    }
+} {
+
+    // Method 1: Reverse String Method
+    public static boolean checkPalindromeReverse(String str) {
+        String reversed = new StringBuilder(str).reverse().toString();
+        return str.equals(reversed);
+    }
+
+    // Method 2: Two Pointer Method
+    public static boolean checkPalindromeTwoPointer(String str) {
+        int left = 0;
+        int right = str.length() - 1;
+
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+    // Method 3: Using Recursion
+    public static boolean checkPalindromeRecursion(String str, int start, int end) {
+        if (start >= end)
+            return true;
+
+        if (str.charAt(start) != str.charAt(end))
+            return false;
+
+        return checkPalindromeRecursion(str, start + 1, end - 1);
+    }
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("=== Palindrome Checker Performance Comparison ===");
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+
+        // Algorithm 1
+        long start1 = System.nanoTime();
+        boolean result1 = checkPalindromeReverse(input);
+        long end1 = System.nanoTime();
+        long time1 = end1 - start1;
+
+        // Algorithm 2
+        long start2 = System.nanoTime();
+        boolean result2 = checkPalindromeTwoPointer(input);
+        long end2 = System.nanoTime();
+        long time2 = end2 - start2;
+
+        // Algorithm 3
+        long start3 = System.nanoTime();
+        boolean result3 = checkPalindromeRecursion(input, 0, input.length() - 1);
+        long end3 = System.nanoTime();
+        long time3 = end3 - start3;
+
+        System.out.println("\n=== Results ===");
+        System.out.println("Reverse Method: " + result1 + " | Time: " + time1 + " ns");
+        System.out.println("Two Pointer Method: " + result2 + " | Time: " + time2 + " ns");
+        System.out.println("Recursion Method: " + result3 + " | Time: " + time3 + " ns");
+
+        scanner.close();
+    }
+}
